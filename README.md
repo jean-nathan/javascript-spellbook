@@ -17,6 +17,7 @@ O repositório está organizado da seguinte forma:
 
 - [Animações](./animations)  
   - [Smooth Scroll](./animations/smooth-scroll)  
+  - [Accordion](./animations/accordion/)  
   - [Outras Animações](./animations)  
 
 - [Utilitários](./utilities)  
