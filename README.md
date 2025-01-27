@@ -16,7 +16,7 @@ O repositório está organizado da seguinte forma:
 ## Índice
 
 - [Animações](./animations)  
-  - [Smooth Scroll](./animations/smooth-scroll.js)  
+  - [Smooth Scroll](./animations/smooth-scroll)  
   - [Outras Animações](./animations)  
 
 - [Utilitários](./utilities)  
