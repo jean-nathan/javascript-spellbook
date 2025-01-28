@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define as seções */
+section {
+  width: 100%;
+  height: 100vh; /* Cada seção ocupa a altura total da janela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translate3d(-30px, 0, 0);
+  transition: .3s; /* Transição suave para visibilidade e posição */
+}
+
+/* Classe que ativa a animação */
+section.ativo {
+  opacity: 1; /* Torna visível */
+  transform: translate3d(0, 0, 0);
+}
+
+/* Diferenciação das seções para visualização */
+.section-1 {
+  background-color: #ff9999;
+}
+
+.section-2 {
+  background-color: #99ccff;
+}
+
+.section-3 {
+  background-color: #99ff99;
+}
+
+.section-4 {
+  background-color: #ffcc99;
+}
