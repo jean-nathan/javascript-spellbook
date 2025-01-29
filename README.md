@@ -18,9 +18,9 @@ O repositório está organizado da seguinte forma:
 - [Animações](./animations)  
   - [Smooth Scroll](./animations/smooth-scroll)  
   - [Accordion](./animations/accordion/)  
-  - [Accordion](./animations/scroll-reveal-animation/)  
+  - [Scroll Reveal Animation](./animations/scroll-reveal-animation/)  
   - [Outras Animações](./animations)  
 
 - [Utilitários](./utilities)  
-  - [Debounce](./utilities/debounce.js)  
+  - [Constructor Function](./utilities/Constructor%20Function/)  
   - [Throttle](./utilities/throttle.js)  
