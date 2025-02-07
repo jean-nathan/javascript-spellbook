@@ -23,4 +23,5 @@ O repositório está organizado da seguinte forma:
 
 - [Utilitários](./utilities)  
   - [Constructor Function](./utilities/Constructor%20Function/)  
-  - [Throttle](./utilities/throttle.js)  
+  - [Prototype](./utilities/Prototype/)
+  - [Arrow Function](./utilities/Arrow%20Function/)  

@@ -16,6 +16,6 @@ function ApplyClass(selector) {
   };
 }
 
-const ElementLi = new ApplyClass("ul");
+const ElementLi = new ApplyClass("li:nth-child(1)");
 
-ElementLi.addClass().removeClass();
+ElementLi.addClass();
