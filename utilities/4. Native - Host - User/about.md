@@ -1,29 +1,121 @@
-# Native, Host e User
+# Objetos: Native, Host e User
 
-## Native
-- Objetos nativos são aqueles definidos na especificacao da linguagem e sao implementados independente do host.
+## 📌 **Objetos Nativos (Native)**
+- Definidos **pela especificação da linguagem** (ECMAScript).
+- Implementados de forma independente do ambiente de execução.
+- Existem em qualquer ambiente que suporte JavaScript.
 
-// Construtores de objetos nativos
+**Exemplos de Construtores Nativos:**
+```javascript
 Object
 String
 Array
 Function
+Promise // Adicionado em versões mais recentes (ES6+)
+```
 
-// Host 
-- Objetos do host são aqueles implementados pelo proprio ambiente. Por exemplo, no browser possuimos objetos do DOM, como DomList, HTMLCollection eoutros. Em Node.js os objetos do Host são diferentes, já que não estamos em um ambiente do browser.
+---
 
-// Objtos do browser
+## 🖥️ **Objetos do Host (Host)**
+- Implementados **pelo ambiente de execução** (browser, Node.js, etc.).
+- Variam conforme o ambiente. Exemplo:
+  - **Browser**: Objetos relacionados ao DOM e BOM.
+  - **Node.js**: Módulos como `fs` (sistema de arquivos) e `http`.
+
+**Exemplos no Browser:**
+```javascript
 NodeList
 HTMLCollection
-Element
+XMLHttpRequest
+window // Objeto global no browser
+```
 
-// User
-- Objetos do user, são objetos definidos pelo seu aplicativo. Ou seja, qualquer objeto que voce criar ou importar de alguma biblioteca externa.
+**Observação:** Objetos do Host não estão disponíveis em outros ambientes (ex: `document` não existe no Node.js).
 
-const pessoa = {nome: 'Andre';}
+---
 
-O ponto é, a forma de usar esses objetos são a mesma, mas saiba que se voce mudar de ambiente, exemplo, usar o Node.js, alguns objetos do Host não serão acesssiveis.
+## 👤 **Objetos do Usuário (User)**
+- Criados pelo desenvolvedor ou importados de bibliotecas externas.
 
-## Diferentes Versoes
+**Exemplo:**
+```javascript
+const pessoa = { 
+  nome: 'Andre', // Correção: vírgula no lugar do ;
+  idade: 30 
+};
 
-Parei no minuto 03:59
+// Objeto criado a partir de uma classe
+class Animal {}
+const cachorro = new Animal();
+```
+
+---
+
+## 🔄 **Compatibilidade entre Ambientes e Versões**
+
+### Navegadores e Versões
+- **Browsers diferentes** podem ter implementações distintas de objetos do Host (ex: APIs antigas vs modernas).
+- **Atualizações de browsers** adicionam novos objetos/métodos (ex: `fetch` foi introduzido posteriormente ao `XMLHttpRequest`).
+
+### ECMAScript e Versões
+- **ECMA International**: Organização que padroniza o JavaScript (ECMAScript).
+- **Versões Anuais**: A partir de 2015 (ES6), novas funcionalidades são lançadas anualmente:
+  - ES2015 (ES6): `let/const`, arrow functions, classes.
+  - ES2016: `Array.prototype.includes`.
+  - ES2017: `async/await`.
+
+### Engines JavaScript
+- Responsáveis por executar o código. Principais engines:
+  - **V8**: Chrome, Edge, Node.js.
+  - **SpiderMonkey**: Firefox.
+  - **JavaScriptCore**: Safari.
+
+---
+
+## 🛠️ **Verificando Disponibilidade**
+Use `typeof` para detectar se um objeto/método existe no ambiente:
+
+```javascript
+// Verifica se Array.from (ES6) está disponível
+console.log(typeof Array.from !== "undefined"); // true em browsers modernos
+
+// Verifica se o ambiente é um browser (ex: Node.js não tem window)
+console.log(typeof window !== "undefined"); 
+```
+
+---
+
+## 🔌 **Polyfills e Transpilers**
+- **Babel**: Transpila código moderno para versões antigas do JavaScript.
+- **Polyfills**: Implementam funcionalidades faltantes em browsers antigos. Exemplo:
+  ```javascript
+  if (!Array.prototype.find) {
+    Array.prototype.find = function(callback) {
+      // Implementação manual do find
+    };
+  }
+  ```
+
+---
+
+## 🌐 **APIs (Application Programming Interface)**
+- **Definição**: Conjunto de interfaces para interação entre softwares.
+  - **Browser APIs**: DOM API, Fetch API, Geolocation API.
+  - **Externo**: APIs de terceiros (ex: Google Maps, Spotify).
+
+### API vs UI
+- **UI (User Interface)**: Interação visual (cliques, formulários).
+- **API**: Interação programática via código (ex: `fetch('https://api.com/data')`).
+
+---
+
+### 📝 **Resumo de Diferenciação**
+| Tipo         | Origem                   | Exemplos                   | Ambiente         |
+|--------------|--------------------------|----------------------------|------------------|
+| **Native**   | Especificação JavaScript | `Array`, `Object`          | Universal        |
+| **Host**     | Ambiente (ex: browser)   | `document`, `localStorage` | Específico       |
+| **User**     | Desenvolvedor            | Objetos/custom classes     | Definido pelo dev|
+
+---
+
+**Nota Final:** Ao desenvolver, considere sempre a compatibilidade do ambiente-alvo e utilize ferramentas como Babel ou polyfills quando necessário. 😊
